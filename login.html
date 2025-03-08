@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    // Cek apakah user sudah login
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html"; // Redirect ke login jika belum login
+}
+
 </head>
 <body class="flex items-center justify-center h-screen bg-gray-100">
     <div class="w-full max-w-md p-8 bg-white rounded-xl shadow-xl">
