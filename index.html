@@ -6,12 +6,7 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
-        // Cek apakah user sudah login, jika ya, arahkan ke laporan.html
-        if (localStorage.getItem("isLoggedIn") === "true") {
-            window.location.href = "laporan.html"; 
-        }
-    </script>
+
 
 </head>
 <body class="flex items-center justify-center h-screen bg-gray-100">
@@ -35,7 +30,10 @@
 
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value.trim();
-
+     // Cek apakah user sudah login, jika ya, arahkan ke laporan.html
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            window.location.href = "laporan.html"; 
+        }
             // Periksa username dan password
             if (username === "admin" && password === "Admin@1234") {
                 localStorage.setItem("isLoggedIn", "true"); // Simpan status login
