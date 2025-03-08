@@ -97,7 +97,18 @@
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script>
+        // Cek apakah user sudah login
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html"; // Kembali ke login jika belum login
+        }
 
+        // Logout
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            localStorage.removeItem("isLoggedIn"); // Hapus status login
+            window.location.href = "login.html"; // Kembali ke login
+        });
+    </script>
 </body>
 
 </html>
