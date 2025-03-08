@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .input-group {
+            position: relative;
+        }
+        .input-group input:focus + .placeholder, 
+        .input-group input:not(:placeholder-shown) + .placeholder {
+            transform: translateY(-18px) scale(0.85);
+            background-color: white;
+            padding: 0 5px;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="w-full max-w-md p-8 bg-white rounded-xl shadow-xl">
+        <h2 class="text-2xl font-semibold text-center text-gray-800">Login</h2>
+        <p class="text-sm text-center text-gray-500 mb-6">Sign in to your account</p>
+        <form id="loginForm" class="space-y-5">
+            <div class="input-group">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 2a5 5 0 100 10 5 5 0 000-10zM2 18a8 8 0 0116 0H2z" />
+                        </svg>
+                    </span>
+                    <input type="text" id="username" placeholder=" " class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 peer" required>
+                    <label class="absolute left-10 top-3 text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:scale-100 peer-focus:top-1 peer-focus:scale-75 peer-focus:text-blue-600 transition-all placeholder">Username</label>
+                </div>
+            </div>
+            <div class="input-group relative">
+                <span class="absolute inset-y-0 left-3 flex items-center text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4 8a6 6 0 0112 0v3h1a1 1 0 011 1v6H3v-6a1 1 0 011-1h1V8zM9 14a1 1 0 102 0V8a1 1 0 10-2 0v6z" clip-rule="evenodd" />
+                    </svg>
+                </span>
+                <input type="password" id="password" placeholder=" " class="w-full px-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 peer" required>
+                <label class="absolute left-10 top-3 text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:scale-100 peer-focus:top-1 peer-focus:scale-75 peer-focus:text-blue-600 transition-all placeholder">Password</label>
+            </div>
+            <button type="submit" class="w-full px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all font-medium text-lg">Login</button>
+        </form>
+        <p id="errorMessage" class="mt-4 text-sm text-red-500 text-center hidden">Invalid username or password</p>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            if (username === "" || password === "") {
+                alert("Username and password cannot be empty!");
+                return;
+            }
+            if (username === "admin" && password === "admin") {
+                alert("Login successful!");
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("errorMessage").classList.remove("hidden");
+            }
+        });
+    </script>
+</body>
+</html>
