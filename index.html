@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-
-
 </head>
 <body class="flex items-center justify-center h-screen bg-gray-100">
     <div class="w-full max-w-md p-8 bg-white rounded-xl shadow-xl">
@@ -24,16 +21,17 @@
     </div>
 
     <script>
-        // Tambahkan event listener ke form login
+        // Cek apakah user sudah login sebelumnya, jika ya, arahkan ke halaman utama
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            window.location.href = "index.html";
+        }
+
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah refresh halaman
 
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value.trim();
-     // Cek apakah user sudah login, jika ya, arahkan ke laporan.html
-        if (localStorage.getItem("isLoggedIn") === "true") {
-            window.location.href = "laporan.html"; 
-        }
+
             // Periksa username dan password
             if (username === "admin" && password === "Admin@1234") {
                 localStorage.setItem("isLoggedIn", "true"); // Simpan status login
