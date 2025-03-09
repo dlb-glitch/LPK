@@ -24,7 +24,7 @@
     <script>
         // Cek apakah user sudah login, jika ya, arahkan ke halaman utama
         if (localStorage.getItem("isLoggedIn") === "true") {
-            window.location.href = "index.html";
+            window.location.href = "laporan.html";
         }
 
         document.getElementById("loginForm").addEventListener("submit", function(event) {
@@ -36,7 +36,7 @@
             // Periksa username dan password
             if (username === "admin" && password === "Admin@1234") {
                 localStorage.setItem("isLoggedIn", "true"); // Simpan status login
-                window.location.href = "index.html"; // Redirect ke halaman utama
+                window.location.href = "laporan.html"; // Redirect ke halaman utama
             } else {
                 document.getElementById("errorMessage").classList.remove("hidden"); // Tampilkan pesan error
             }
