@@ -22,10 +22,12 @@
     </div>
 
     <script>
-        // Cek apakah user sudah login, jika ya, arahkan ke halaman utama
-        if (localStorage.getItem("isLoggedIn") === "true") {
-            window.location.href = "laporan.html";
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Jika user sudah login, langsung arahkan ke halaman utama
+            if (sessionStorage.getItem("isLoggedIn") === "true") {
+                window.location.href = "laporan.html";
+            }
+        });
 
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah refresh halaman
@@ -34,8 +36,8 @@
             const password = document.getElementById("password").value.trim();
 
             // Periksa username dan password
-            if (username === "admin" && password === "Admin@1234") {
-                localStorage.setItem("isLoggedIn", "true"); // Simpan status login
+            if (username === "admin" && password === "admin1234") {
+                sessionStorage.setItem("isLoggedIn", "true"); // Simpan status login untuk sesi saat ini
                 window.location.href = "laporan.html"; // Redirect ke halaman utama
             } else {
                 document.getElementById("errorMessage").classList.remove("hidden"); // Tampilkan pesan error
