@@ -15,7 +15,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Cek apakah user sudah login (gunakan sessionStorage)
         if (sessionStorage.getItem("isLoggedIn") !== "true") {
-            window.location.href = "login.html"; // Redirect ke login jika belum login
+            window.location.href = "index.html"; // Redirect ke login jika belum login
         }
     });
 </script>
@@ -109,7 +109,7 @@
     <script>
     document.getElementById("logoutButton").addEventListener("click", function() {
         sessionStorage.removeItem("isLoggedIn"); // Hapus status login
-        window.location.href = "login.html"; // Redirect ke login
+        window.location.href = "index.html"; // Redirect ke login
     });
 </script>
 
