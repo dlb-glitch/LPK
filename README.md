@@ -1,6 +1,6 @@
 # Aplikasi Laporan Keuangan
 
-Aplikasi ini digunakan untuk mencatat transaksi keuangan secara otomatis dalam tabel, dengan fitur penyimpanan ke **PDF**. Data disimpan menggunakan **localStorage** agar bisa digunakan tanpa database.
+Aplikasi ini digunakan untuk mencatat transaksi keuangan secara otomatis dalam tabel, dengan fitur penyimpanan ke **PDF**. Data disimpan menggunakan **localStorage** agar bisa digunakan tanpa database. Untuk versi yang menggunakan database " https://laporan.ct.ws" 
 
 ## ✨ Fitur Utama
 - **Input Data Keuangan**: Tambah transaksi pemasukan dan pengeluaran.
@@ -22,4 +22,4 @@ Aplikasi ini digunakan untuk mencatat transaksi keuangan secara otomatis dalam t
 - **jsPDF** untuk ekspor ke PDF
 
 ## 📂 Hosting
-Aplikasi ini bisa dihosting di **GitHub Pages** agar mudah diakses.
+Aplikasi ini dihosting di **GitHub Pages** agar mudah diakses.
